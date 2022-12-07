@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--INPUT and Form Handling is Required Everywhere When we Sign-up/Log-in, When we Pay for the Products/Goods that we Buy from any Website -->
+    <title>Sign-up Form</title>
+
+    <!--Add CSS -->
+    <!--For Space Around Everything -->
+    <style>
+        div {
+            margin: 10px;
+        }
+
+        .resetBtn {
+            color: Green;
+        }
+    </style>
+</head>
+<body>
+    <!--Everything should be inside the <form> tag so that when we Press ENTER key it SUBMITS the form, and <form> also ENCAPSULATES all the Different Fields Together-->
+
+        <!--To submit The Form we use these i.e
+    1- a JAVASCRIIPT FUNCTION, onsubmit=""
+
+    2- METHOD(GET vs POST),Whenever we submit a form we send the INFORMATION from the BROWSER to the SERVER through restAPI Always use POST(sends data in the BODY of the request[HTTPS]) because it is More SECURED than GET(sends data in the URL[HTTP])
+
+    3- TARGET  
+    4- AUTOCOMPLETE  -->
+    <form onsubmit="specialFunction()" method="Post" target="_blank" autocomplete="on">
+
+<!--##Using different input types for text (text, email, dob, tel, password) -->
+        <!--For First Name -->
+    <div>
+        <!-- <label> TAG is to tell About the Input Field and Also for the BROWSER to Understand where the Things are Placed(SEO  and Screen Readers Purpose) -->
+        <label for="fname">First Name</label>
+        <!--#IMPORTANT:- the for="" and id="" Attributes Should be same For Every Particular Fields -->
+        <input id="fname" type="text" placeholder="Jim" />
+    </div>
+    <!--We use fname, lname, email... etc, For the BROWSER to Understand and AUTO-COMPLETE  -->
+
+    <!--For Last Name -->
+    <div>
+        <label for="lname">Last Name</label>
+        <input id="lname" type="text" placeholder="Carry" />
+    </div>
+
+    <!--For Date of Birth -->
+    <div>
+        <label for="dob">Enter your Date of Birth</label>
+        <input id="dob" type="date" value="dob" min="01//01/1990" max="12/31/2022">
+    </div>
+
+    <!--For Email-ID -->
+    <div>
+        <label for="email">Email-ID</label>
+        <input id="email" type="email" placeholder="xyz@gmail.com" />
+        <!--Here, type="email" will Perform a VALIDATION over the email-id(Checks the SYNTAX od email) -->
+    </div>
+
+    <!--For Telephone -->
+    <div>
+        <label for="phone">Mobile No.</label>
+        <input id="phone" type="tel" />
+        <!--Always use type="tel" for Mobile No. because it takes the (+)Symbol, Different Patterns(+998-989-9898) -->
+    </div>
+
+    <!--For Password-->
+    <div>
+        <label for="password">Password</label>
+        <input id="password" type="password" />
+        <!--Use type="password" for HIDDEN text -->
+    </div>
+
+<!--##Implementing different types of input options (dropdown, radio, checkbox, file)  -->
+    <!--For DROP-DOWN Input Field(user can choose on ONE) -->
+    <!--For drop-down we use <select> -->
+    <div>
+        <label for="level">What is your current skill level in coding:</label>
+
+        <!--Here, name="level" is used For GROUPING i.e all the Options are of GROUP -->
+        <select id="level" name="level">
+
+            <!--(Example with numbers)When using <option> Always use VALUE="" Attribute, in CODE Value starts with ZERO(0) -->
+            <option value="0">Im a Biginner</option>
+            <option value="1">Im a Intermediate</option>
+            <option value="2">Im a Expert</option>
+            <option value="3">Just tell me What to Do!!</option>
+        </select>
+    </div>
+    
+    <!--For RADIO input Fields(we can choose only ONE) -->
+    <div>
+        <label for="membership">Which Membership would you like:</label>
+
+        <div>
+            <!--Here, type="radio" will Give a CIRCLE field -->
+            <input id="free" type="radio" name="membership" value="free" />
+            <!--(example with String)Here, Value="", is Given a STRING not a number, but always use NUMBERS for Value="" -->
+            <label for="free">Join for Free</label><br>
+
+            <input id="platinum" type="radio" name="membership" value="platinum" />
+            <label for="platinum">I want to join Platinum</label><br>
+
+            <input id="diamond" type="radio" name="membership" value="diamond" checked />
+            <label for="diamond">I want to join Diamond</label>
+        </div>
+    </div>
+
+    <!--For CHECKBOX input Field(we can choose MANY) -->
+    <div>
+        <label for="reason">Why you want to join?</label>
+
+        <div>
+            <input id="love" type="checkbox" name="reason" value="love" />
+            <label for="love">I love React!!</label><br>
+
+            <input id="community" type="checkbox" name="reason" value="community" />
+            <label for="community">I want to be the part of an awesome Community</label><br>
+
+            <input id="job" type="checkbox" name="reason" value="job" />
+            <label for="job">I want to land a Job</label><br>
+
+            <input id="skills" type="checkbox" name="reason" value="skills" />
+            <label for="skills">I want to push my current coding Skills!!</label>
+        </div>
+    </div>
+
+     <!--For File Picker Input Field -->
+    <input type="file" />
+
+<!--##How to submit and reset a form  -->
+    <!--Form Control Buttons -->
+    <div>
+        <button class="resetBtn" type="reset">RESET</button>
+        <button type="submit">Submit</button>
+    </div>
+    </form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
